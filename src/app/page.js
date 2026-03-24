@@ -10,6 +10,9 @@ import SkillsContent from "@/components/sections/Skills";
 import ExperienceContent from "@/components/sections/Experience";
 import ContactContent from "@/components/sections/Contact";
 import HeroContent from "@/components/sections/Hero";
+import TrainingContent from "@/components/sections/Training";
+import CertificationsContent from "@/components/sections/Certifications";
+import AchievementsContent from "@/components/sections/Achievements";
 
 const SpaceCanvas = dynamic(
   () => import("@/components/three/SpaceCanvas"),
@@ -21,6 +24,9 @@ const WAYPOINTS = [
   { id: "projects", icon: "🛸", title: "Projects", tagline: "Things I've launched into orbit" },
   { id: "skills", icon: "⚡", title: "Skills", tagline: "My technical arsenal" },
   { id: "experience", icon: "🌌", title: "Journey", tagline: "Where I've traveled so far" },
+  { id: "training", icon: "📚", title: "Training", tagline: "Continuous learning" },
+  { id: "certifications", icon: "📜", title: "Certifications", tagline: "Official credentials" },
+  { id: "achievements", icon: "🏆", title: "Achievements", tagline: "Milestones reached" },
   { id: "contact", icon: "📡", title: "Contact", tagline: "Send a signal" },
 ];
 
@@ -69,6 +75,15 @@ export default function Home() {
       </DetailModal>
       <DetailModal isOpen={activeModal === "experience"} onClose={() => setActiveModal(null)} title="Journey" icon="🌌">
         <ExperienceContent />
+      </DetailModal>
+      <DetailModal isOpen={activeModal === "training"} onClose={() => setActiveModal(null)} title="Training" icon="📚">
+        <TrainingContent />
+      </DetailModal>
+      <DetailModal isOpen={activeModal === "certifications"} onClose={() => setActiveModal(null)} title="Certifications" icon="📜">
+        <CertificationsContent />
+      </DetailModal>
+      <DetailModal isOpen={activeModal === "achievements"} onClose={() => setActiveModal(null)} title="Achievements" icon="🏆">
+        <AchievementsContent />
       </DetailModal>
       <DetailModal isOpen={activeModal === "contact"} onClose={() => setActiveModal(null)} title="Contact" icon="📡">
         <ContactContent />
